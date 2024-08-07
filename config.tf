@@ -7,8 +7,8 @@ terraform {
 }
 
 provider "postgresql" {
-  host            = "localhost"
-  port            = "5433"
+  host            = var.host # "localhost"
+  port            = var.port # "5433"
   username        = var.root_db_user
   password        = jsondecode(data.aws_secretsmanager_secret_version.credentials.secret_string)["password"]
   sslmode         = "require"

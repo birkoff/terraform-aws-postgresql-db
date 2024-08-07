@@ -14,7 +14,7 @@ locals {
   env      = local.env_vars.locals.aws_env
 }
 inputs = {
-  service_name    = "users-service"
+  service    = "users-service"
   db_endpoint = "database-rds.xxxxxxxxxxxx.us-east-1.rds.amazonaws.com:5432"
   db_name     = "user_${local.env}"
   db_username = "user_${local.env}"

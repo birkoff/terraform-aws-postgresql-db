@@ -1,5 +1,5 @@
 locals {
-  secret_name = "/${var.service_name}/postgresql_database"
+  secret_name = "/${var.application}/${var.service}/postgresql_db"
 }
 
 resource "postgresql_database" "this" {
