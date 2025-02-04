@@ -42,5 +42,5 @@ module "secrets_manager" {
 resource "random_password" "db_password" {
   length           = 16     # Specify the desired password length
   special          = true   # Include special characters in the password
-  override_special = "_!@#" # Optional: Specify additional special characters
+  override_special = "_!$%^&*#" # Optional: Specify additional special characters
 }
