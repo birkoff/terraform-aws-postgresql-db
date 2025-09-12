@@ -1,7 +1,3 @@
-variable "db_endpoint" {
-  type = string
-}
-
 variable "application" {
   default = ""
 }
