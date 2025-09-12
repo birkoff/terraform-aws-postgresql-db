@@ -31,10 +31,10 @@ module "secrets_manager" {
   block_public_policy = true
   secret_string = jsonencode({
     engine   = "postgresql",
-    host     = split(":", var.db_endpoint)[0],
+    host     = jsondecode(data.aws_secretsmanager_secret_version.credentials.secret_string)["host"],
     username = var.db_username,
     password = random_password.db_password.result,
-    port     = split(":", var.db_endpoint)[1],
+    port     = jsondecode(data.aws_secretsmanager_secret_version.credentials.secret_string)["port"],
     database = var.db_name
   })
 }
